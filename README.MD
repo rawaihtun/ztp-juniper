@@ -91,7 +91,7 @@ pasv_max_port=50000
 ```
 
  Restart vsftpd service
-  `sudo systemctl restart vsftpd` <br>
+![#f03c15] `sudo systemctl restart vsftpd` `#f03c15` <br>
 
  Check server status 
 ```diff
@@ -99,7 +99,7 @@ pasv_max_port=50000
 [sudo] password for rawai:
 ● vsftpd.service - vsftpd FTP server
      Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; vendor preset: enabled)
-+     Active: active (running) since Thu 2021-07-29 11:32:49 UTC; 1h 6min ago
+     Active: active (running) since Thu 2021-07-29 11:32:49 UTC; 1h 6min ago
    Main PID: 870 (vsftpd)
       Tasks: 1 (limit: 4584)
      Memory: 1.0M
