@@ -1,7 +1,7 @@
-1) Install DHCP server
+# 1) Install DHCP server
 https://ubuntu.com/server/docs/network-dhcp
 
-2) Edit DHCP config 
+# 2) Edit DHCP config 
 - define interface 
 `/etc/default/isc-dhcp-server`
 ```
@@ -64,7 +64,7 @@ Jul 29 11:50:47 ztp dhcpd[1948]: Sending on   Socket/fallback/fallback-net
 Jul 29 11:50:47 ztp dhcpd[1948]: Server starting service.
 ```
 
-3) Install VSFTPD with Anonymous download <br>
+# 3) Install VSFTPD with Anonymous download <br>
 https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-anonymous-downloads-on-ubuntu-16-04
 
 ```
@@ -91,7 +91,8 @@ pasv_max_port=50000
 ```
 
  Restart vsftpd service
-  `sudo systemctl restart vsftpd`
+  `sudo systemctl restart vsftpd` <br>
+
  Check server status 
 ```
  sudo systemctl status vsftpd
@@ -111,4 +112,4 @@ Jul 29 11:32:49 ztp systemd[1]: Starting vsftpd FTP server...
 Jul 29 11:32:49 ztp systemd[1]: Started vsftpd FTP server.
 ```
 
-4) Login to device and type "request system zeroize" and wait for magic happen. 
+# 4) Login to device and type "request system zeroize" and wait for magic happen. 
