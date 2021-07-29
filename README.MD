@@ -91,7 +91,7 @@ pasv_max_port=50000
 ```
 
  Restart vsftpd service
-![#f03c15] `sudo systemctl restart vsftpd` `#f03c15` <br>
+- ![#f03c15] `sudo systemctl restart vsftpd` `#f03c15` <br>
 
  Check server status 
 ```diff
