@@ -2,11 +2,12 @@
 https://ubuntu.com/server/docs/network-dhcp
 
 2) Edit DHCP config 
+- define interface 
 `/etc/default/isc-dhcp-server`
 ```
 INTERFACESv4="eth4"
 ```
-
+- create dhcp config 
 `/etc/dhcp/dhcpd.conf`
 
 ```
@@ -63,14 +64,13 @@ Jul 29 11:50:47 ztp dhcpd[1948]: Sending on   Socket/fallback/fallback-net
 Jul 29 11:50:47 ztp dhcpd[1948]: Server starting service.
 ```
 
-3) Install VSFTPD with Anonymous download 
+3) Install VSFTPD with Anonymous download <br>
 https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-anonymous-downloads-on-ubuntu-16-04
 
 ```
 # minimal sample /etc/vsftpd.conf
 listen=YES
 #listeni_ipv6=YES
-
 
 # Allow anonymous FTP? (Disabled by default).
 anonymous_enable=YES
@@ -88,5 +88,27 @@ hide_ids=YES
 pasv_min_port=40000
 pasv_max_port=50000
 # Make sure PORT transfer connections originate from port 20 (ftp-data).
-
 ```
+
+ Restart vsftpd service
+  `sudo systemctl restart vsftpd`
+ Check server status 
+```
+ sudo systemctl status vsftpd
+[sudo] password for rawai:
+Sorry, try again.
+[sudo] password for rawai:
+● vsftpd.service - vsftpd FTP server
+     Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2021-07-29 11:32:49 UTC; 1h 6min ago
+   Main PID: 870 (vsftpd)
+      Tasks: 1 (limit: 4584)
+     Memory: 1.0M
+     CGroup: /system.slice/vsftpd.service
+             └─870 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Jul 29 11:32:49 ztp systemd[1]: Starting vsftpd FTP server...
+Jul 29 11:32:49 ztp systemd[1]: Started vsftpd FTP server.
+```
+
+4) Login to device and type "request system zeroize" and wait for magic happen. 
